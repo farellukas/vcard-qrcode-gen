@@ -9,11 +9,14 @@ def create_vcard():
 # add name (requried) and formatted name (required)
 def add_vcard_name(vcard, first, middle, last):
     vcard.add('n')
-    given_names = first + " " + middle
+    if middle == "":
+        given_names = first
+    else:
+        given_names = first + " " + middle
     vcard.n.value = vobject.vcard.Name( family=last, given=given_names )
 
     vcard.add('fn')
-    vcard.fn.value = f"{first} {middle} {last}"
+    vcard.fn.value = f"{given_names} {last}"
 
 # create vCard string
 def output_vcard(vcard):
