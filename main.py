@@ -10,7 +10,14 @@ qr = qrcode.QRCode(
 )
 
 # Add the data that the QR code will hold
-qr.add_data('Some text')
+content = """
+BEGIN:VCARD
+VERSION:3.0
+FN:John Doe
+N:Doe;John;;;
+END:VCARD
+"""
+qr.add_data(content)
 
 # Compile the QR code data
 qr.make(fit=True)  # fit argument is to avoid data overflow (keep at True)
