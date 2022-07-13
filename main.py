@@ -1,29 +1,12 @@
-# vCard QR code generator
+# vCard QR Code Generator
 
-import qrcode  # docs found in https://pypi.org/project/qrcode/
+import qrcode_gen, vcard_gen
 
-# Initialize QRCOde class
-qr = qrcode.QRCode(
-    version=1,  # size of qr code
-    box_size=10,  # change size of each box in the qr code (in px)
-    border=5  # change the border size (in boxes)
-)
+def main():
+    first_name = input("Enter contact's first name: ")
+    middle_name = input("Enter contact's middle names (if any): ")
+    last_name = input("Enter contact's last name: ")
 
-# Add the data that the QR code will hold
-content = """
-BEGIN:VCARD
-VERSION:3.0
-FN:John Doe
-N:Doe;John;;;
-END:VCARD
-"""
-qr.add_data(content)
+    
 
-# Compile the QR code data
-qr.make(fit=True)  # fit argument is to avoid data overflow (keep at True)
-
-# Make QR code image
-img = qr.make_image(fill_color="black", back_color="white")  # fill_color: color of the boxes, back_color: background color
-
-# Save QR code image in the output folder
-img.save("output/some_file.png")
+main()
