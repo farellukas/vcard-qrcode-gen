@@ -7,6 +7,13 @@ def main():
     middle_name = input("Enter contact's middle names (if any): ")
     last_name = input("Enter contact's last name: ")
 
+    email = input("Enter contact's email: ")
+
+    phone = input("Enter contact's phone number: ")
+
+    company = input("Enter contact's company: ")
+    position = input("Enter contact's position: ")
+
     if middle_name == "":
         full_name = f"{first_name} {last_name}"
     else:
@@ -15,6 +22,10 @@ def main():
     vcard = vcardgen.create_vcard()
 
     vcardgen.add_vcard_name(vcard, first_name, middle_name, last_name)
+    vcardgen.add_vcard_email(vcard, email)
+    vcardgen.add_vcard_phone(vcard, phone)
+    vcardgen.add_vcard_company(vcard, company, position)
+
     vcard_output = vcardgen.output_vcard(vcard)
 
     qr = qrcodegen.create_qr(1, 10, 5)
