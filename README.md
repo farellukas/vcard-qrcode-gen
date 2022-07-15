@@ -6,7 +6,8 @@ A python-based vCard QR code generator
 
 1. Install the latest version of python3 from https://www.python.org/ 
 2. Clone this repository and using the terminal, `cd` to the directory
-3. Run `pip install -r requirements.txt` to install the required dependencies
+3. Make a new directory called "output" (this is where all the QR codes will be generated)
+4. Run `pip install -r requirements.txt` to install the required dependencies
 
 ## Usage
 
