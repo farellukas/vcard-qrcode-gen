@@ -3,9 +3,9 @@
 from modules import qrcodegen, vcardgen
 
 def main():
-    first_name = input("Enter contact's first name: ")
-    middle_name = input("Enter contact's middle names (if any): ")
-    last_name = input("Enter contact's last name: ")
+    first_name = input("Enter contact's first name (required): ")
+    middle_name = input("Enter contact's middle names (optional): ")
+    last_name = input("Enter contact's last name (required): ")
 
     email = input("Enter contact's email: ")
 
