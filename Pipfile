@@ -4,6 +4,8 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+vobject = "*"
+qrcode = {extras = ["pil"], version = "*"}
 
 [dev-packages]
 

@@ -1,6 +1,6 @@
 # vCard QR Code Generator
 
-import qrcodegen, vcardgen
+from modules import qrcodegen, vcardgen
 
 def main():
     first_name = input("Enter contact's first name: ")
