@@ -44,5 +44,7 @@ def main():
     qr_img = qrcodegen.generate_qr(qr, 'black', 'white')
     qrcodegen.save_qr_img(qr_img, full_name, "output")
 
+    print('Your QR code has been generated in the /output folder!')
+
 
 main()
