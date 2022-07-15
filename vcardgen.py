@@ -1,6 +1,6 @@
 # vCard generator
 
-import vobject # docs found in https://pypi.org/project/vobject/ and vCard 3.0 format in https://www.evenx.com/vcard-3-0-format-specification
+import vobject # docs found in https://pypi.org/project/vobject/ and vCard 3.0 format in https://www.evenx.com/vcard-3-0-format-specification or https://datatracker.ietf.org/doc/html/rfc6350
 
 # create vCard instance
 def create_vcard():
@@ -13,7 +13,7 @@ def add_vcard_name(vcard, first, middle, last):
         given_names = first
     else:
         given_names = first + " " + middle
-    vcard.n.value = vobject.vcard.Name( family=last, given=given_names )
+    vcard.n.value = vobject.vcard.Name( family=last, given=first, additional=middle )
 
     vcard.add('fn')
     vcard.fn.value = f"{given_names} {last}"
@@ -31,20 +31,22 @@ def add_vcard_company(vcard, company, position):
     temp.append(company)
     temp.append(position)
     vcard.org.value = temp
-    vcard.org.type_param = ''
 
 # add address
-def add_vcard_address(vcard, street, locality, region, postal_code):
+def add_vcard_address(vcard, street, city, region, postal_code, country):
     vcard.add('adr')
-    address = f'{street};{locality};{region};{postal_code}'
-    vcard.adr.value = address
-    vcard.adr.type_param = 'dom,work'
+    vcard.adr.value = vobject.vcard.Address(street, city, region, postal_code, country)
 
 # add phone
 def add_vcard_phone(vcard, phone):
     vcard.add('tel')
     vcard.tel.value = phone
     vcard.tel.type_param = 'WORK'
+
+# add website
+def add_vcard_website(vcard, website):
+    vcard.add('url')
+    vcard.url.value = website
 
 # create vCard string
 def output_vcard(vcard):
