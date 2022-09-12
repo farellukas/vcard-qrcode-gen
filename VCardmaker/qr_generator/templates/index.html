@@ -4,9 +4,64 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>vCard QR Code Generator</title>
+  <title>vCard Maker</title>
 </head>
 <body>
   <h1>vCard QR Code Generator</h1>
+
+  <form action="vcard" method="POST">
+    {% csrf_token %}
+
+    <div class="form-name form-section">
+      <label for="first_name">First Name*</label><br>
+      <input type="text" id="first_name" name="first_name" autocomplete="off" required><br>
+
+      <label for="middle_name">Middle Name(s)</label><br>
+      <input type="text" id="middle_name" name="middle_name" autocomplete="off"><br>
+
+      <label for="last_name">Last Name*</label><br>
+      <input type="text" id="last_name" name="last_name" autocomplete="off" required><br>
+    </div>
+
+    <div class="form-contact form-section">
+      <label for="email">Email</label><br>
+      <input type="text" id="email" name="email" autocomplete="off"><br>
+
+      <label for="phone">Phone</label><br>
+      <input type="text" id="phone" name="phone" autocomplete="off"><br>
+    </div>
+
+    <div class="form-company form-section">
+      <label for="company">Company</label><br>
+      <input type="text" id="company" name="company" autocomplete="off"><br>
+
+      <label for="position">Position</label><br>
+      <input type="text" id="position" name="position" autocomplete="off"><br>
+    </div>
+
+    <div class="form-address form-section">
+      <label for="street">Street</label><br>
+      <input type="text" id="street" name="street" autocomplete="off"><br>
+
+      <label for="city">City</label><br>
+      <input type="text" id="city" name="city" autocomplete="off"><br>
+
+      <label for="region">Region</label><br>
+      <input type="text" id="region" name="region" autocomplete="off"><br>
+
+      <label for="postal_code">Postal Code</label><br>
+      <input type="text" id="postal_code" name="postal_code" autocomplete="off"><br>
+
+      <label for="country">Country</label><br>
+      <input type="text" id="country" name="country" autocomplete="off"><br>
+    </div>
+
+    <div class="form-website form-section">
+      <label for="website">Website</label><br>
+      <input type="text" id="website" name="website" autocomplete="off"><br>
+    </div>
+
+    <input type="submit" class="submit">
+  </form>
 </body>
 </html>
