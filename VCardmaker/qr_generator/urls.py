@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import index
+from .views import index, qr
 
 urlpatterns = [
-    path('', index)
+    path('', index),
+    path('qr', qr)
 ]
