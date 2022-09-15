@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from qr_generator.modules import qrcodegen, vcardgen
+from io import BytesIO
+import base64
+from django.utils.encoding import force_str
 
 # Create your views here.
 def index(request):
@@ -44,7 +47,9 @@ def qr(request):
   qrcodegen.compile_qr(qr)
   qr_img = qrcodegen.generate_qr(qr, 'black', 'white')
 
-  response = HttpResponse(content_type='image/jpg')
-  qr_img.save(response, 'JPEG')
+  # encode QR code into base64 string
+  buffered = BytesIO()
+  qr_img.save(buffered, 'JPEG')
+  qr_img_str = base64.b64encode(buffered.getvalue())
 
-  return response
+  return render(request, 'qr.html', {'qr': force_str(qr_img_str)})
