@@ -31,6 +31,14 @@ input[type="text"]:focus {
   background-color: white;
   color: #3498db;
   border: none;
+  border: white solid 8px;
+  text-decoration: none;
+}
+
+.general-button:hover {
+  background-color: #3498db;
+  color: white;
+  border: white solid 8px;
   text-decoration: none;
 }
 
@@ -44,4 +52,10 @@ input[type="text"]:focus {
 
 .qr-code {
   width: 50%;
+}
+
+.inner-button {
+  color: inherit;
+  background: none;
+  border: none;
 }
