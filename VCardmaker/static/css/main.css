@@ -27,9 +27,21 @@ input[type="text"]:focus {
   border: white solid 8px;
 }
 
-.submit-button {
-  width: 75%;
+.general-button {
   background-color: white;
   color: #3498db;
   border: none;
+  text-decoration: none;
+}
+
+.submit-button {
+  width: 75%;
+}
+
+.back-button {
+  width: 50%;
+}
+
+.qr-code {
+  width: 50%;
 }

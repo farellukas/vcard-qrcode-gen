@@ -51,7 +51,7 @@ def qr(request):
     vcard_output = vcardgen.output_vcard(vcard)
 
     # create QR code
-    qr = qrcodegen.create_qr(1, 10, 5)
+    qr = qrcodegen.create_qr(1, 10, 3)
     qrcodegen.add_qr_content(qr, vcard_output)
     qrcodegen.compile_qr(qr)
     qr_img = qrcodegen.generate_qr(qr, 'black', 'white')
