@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  color: white;
+  font-family: "Press Start 2P", cursive;
+}
+
+#root {
+  background-color: #3498db;
+}
+
+input[type="text"] {
+  background-color: transparent;
+  border: white solid 4px;
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+.form-heading {
+  padding: 0 12.5%;
+}
+
+.form-group {
+  width: 75%;
+  border: white solid 8px;
+}
+
+.submit-button {
+  width: 75%;
+  background-color: white;
+  color: #3498db;
+  border: none;
+}
