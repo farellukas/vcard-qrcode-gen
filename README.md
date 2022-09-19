@@ -23,3 +23,5 @@ A python-based vCard QR code generator with web interface support
 7. Open the web application in the browser at http://localhost:8000
 8. Fill in the desired fields (any required fields are labelled with *)
 9. Once finished, the QR code will be generated in next webpage (right click > save image, to save the image in your local computer)
+
+Additionally, the web application is hosted at https://farellukas.pythonanywhere.com
