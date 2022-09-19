@@ -15,7 +15,11 @@ A python-based vCard QR code generator with web interface support
 
 ### Web UI
 1. `cd` to the directory `VCardMaker`
-2. Run `python manage.py runserver` to start the web application
-3. Open the web application in the browser at http://localhost:8000
-4. Fill in the desired fields (any required fields are labelled with *)
-5. Once finished, the QR code will be generated in next webpage (right click > save image, to save the image in your local computer)
+2. Run python -c 'from django.core.management.utils import get_random_secret_key; print(get_random_secret_key())'
+3. Copy the generated secret key
+4. Create a new file called `.env`
+5. Enter `SECRET_KEY = <secret key>` (replacing <secret key> with the previously generated secret key) into `.env` and save it
+6. Run `python manage.py runserver` to start the web application
+7. Open the web application in the browser at http://localhost:8000
+8. Fill in the desired fields (any required fields are labelled with *)
+9. Once finished, the QR code will be generated in next webpage (right click > save image, to save the image in your local computer)
