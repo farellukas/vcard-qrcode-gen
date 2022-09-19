@@ -11,9 +11,10 @@ def add_vcard_name(vcard, first, middle, last):
     vcard.add('n')
     if middle == "":
         given_names = first
+        vcard.n.value = vobject.vcard.Name( family=last, given=first )
     else:
         given_names = first + " " + middle
-    vcard.n.value = vobject.vcard.Name( family=last, given=first, additional=middle )
+        vcard.n.value = vobject.vcard.Name( family=last, given=first, additional=middle )
 
     vcard.add('fn')
     vcard.fn.value = f"{given_names} {last}"
