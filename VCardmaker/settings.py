@@ -28,9 +28,10 @@ SECRET_KEY = os.getenv("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [".railway.app"]
+ALLOWED_HOSTS = [".railway.app", "railway.app", "*"]
 CSRF_TRUSTED_ORIGINS = ["https://*.railway.app"]
-
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
 
 # Application definition
 
