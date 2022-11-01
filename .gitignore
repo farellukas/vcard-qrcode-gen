@@ -1,1 +1,5 @@
 .env
+
+VCardmaker/__pycache__/
+qr_generator/__pycache__/
+qr_generator/modules/__pycache__/
