@@ -27,7 +27,7 @@ SECRET_KEY = 'eg_=lbyn3$xava2c+v3y$3#q#%u*k#g&w&f7d$2+)*_!^4e!an'
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
-CSRF_TRUSTED_ORIGINS = ["*"]
+CSRF_TRUSTED_ORIGINS = ["*", "https://vcardqrgen.up.railway.app/"]
 
 
 # Application definition
